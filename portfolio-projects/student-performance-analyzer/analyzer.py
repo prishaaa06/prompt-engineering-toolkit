@@ -28,6 +28,8 @@ def load_records(path):
 
 
 def analyze(records, pass_mark=40):
+    if not records:
+        raise ValueError("At least one student record is required")
     if not 0 <= pass_mark <= 100:
         raise ValueError("pass_mark must be between 0 and 100")
     students = []
